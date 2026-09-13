@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { useTranslations } from 'next-intl'
 
 export interface WhyOnePartnerProps {
   onExploreClick?: () => void
@@ -13,26 +14,8 @@ export default function WhyOnePartner({
   onBookCallClick,
   bookCallHref = 'https://cal.com/david-raigoza-1juo6a',
 }: WhyOnePartnerProps) {
-  const principles = [
-    {
-      index: '01',
-      title: 'Preserve the idea',
-      description:
-        'Every decision should reinforce the original problem instead of diluting it through disconnected handoffs.',
-    },
-    {
-      index: '02',
-      title: 'Build as one system',
-      description:
-        'Strategy, design, engineering, AI, and business decisions evolve together instead of being separated into isolated phases.',
-    },
-    {
-      index: '03',
-      title: 'Learn from reality',
-      description:
-        'Launching is not the end. Every product generates evidence that informs what comes next.',
-    },
-  ]
+  const t = useTranslations('about')
+  const principles = (t.raw('principles') as Array<{ index: string; title: string; description: string }>) || []
 
   return (
     <section
@@ -95,7 +78,7 @@ export default function WhyOnePartner({
               display: 'inline-block',
             }}
           >
-            WHY ONE PARTNER?
+            {t('eyebrow')}
           </span>
 
           {/* Heading */}
@@ -111,9 +94,9 @@ export default function WhyOnePartner({
               color: 'var(--text-primary, #FFFFFF)',
             }}
           >
-            One conversation.
+            {t('heading1')}
             <br />
-            One continuous system.
+            {t('heading2')}
           </h2>
 
           {/* Editorial Body */}
@@ -130,10 +113,10 @@ export default function WhyOnePartner({
             }}
           >
             <p style={{ margin: 0 }}>
-              I run a lightweight product studio built to move from intention to working product without the overhead of a traditional team.
+              {t('intro1')}
             </p>
             <p style={{ margin: 0 }}>
-              Strategy, design, engineering, AI, and deployment are usually treated as separate stages. I work across them as one continuous system, so decisions can stay connected from the first idea to the product in people's hands.
+              {t('intro2')}
             </p>
           </div>
         </header>
@@ -189,7 +172,7 @@ export default function WhyOnePartner({
                 e.currentTarget.style.borderColor = 'var(--border-color, rgba(255, 255, 255, 0.2))'
               }}
             >
-              Book a discovery call
+              {t('bookCall')}
             </button>
           ) : (
             <a
@@ -221,7 +204,7 @@ export default function WhyOnePartner({
                 e.currentTarget.style.borderColor = 'var(--border-color, rgba(255, 255, 255, 0.2))'
               }}
             >
-              Book a discovery call
+              {t('bookCall')}
             </a>
           )}
         </div>
@@ -316,11 +299,10 @@ export default function WhyOnePartner({
           }}
         >
           <p style={{ margin: 0 }}>
-            The projects below are connected by more than technology.
+            {t('closing.line1')}
           </p>
           <p style={{ margin: 0 }}>
-            Whether the outcome becomes an AI platform, a blockchain protocol, or a
-            physical product, the objective remains the same:
+            {t('closing.line2')}
           </p>
           <p
             style={{
@@ -329,7 +311,7 @@ export default function WhyOnePartner({
               fontWeight: 400,
             }}
           >
-            Reduce the distance between intention and understanding.
+            {t('closing.line3')}
           </p>
         </div>
 
@@ -359,7 +341,7 @@ export default function WhyOnePartner({
               e.currentTarget.style.color = 'var(--muted, rgba(255, 255, 255, 0.5))'
             }}
           >
-            <span>Explore the portfolio</span>
+            <span>{t('explore')}</span>
             <span aria-hidden="true">↓</span>
           </button>
         ) : (
@@ -384,7 +366,7 @@ export default function WhyOnePartner({
               e.currentTarget.style.color = 'var(--muted, rgba(255, 255, 255, 0.5))'
             }}
           >
-            <span>Explore the portfolio</span>
+            <span>{t('explore')}</span>
             <span aria-hidden="true">↓</span>
           </a>
         )}

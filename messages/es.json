@@ -1,0 +1,344 @@
+{
+  "languageSuggestion": {
+    "eyebrow": "Idioma detectado",
+    "message": "Parece que prefieres español.",
+    "continueSpanish": "Continuar en español →",
+    "keepEnglish": "Mantener inglés"
+  },
+  "cookie": {
+    "title": "Un pequeño consentimiento",
+    "description": "Uso analítica respetuosa con la privacidad para entender cómo se utiliza este portafolio y mejorar la experiencia.",
+    "accept": "Aceptar",
+    "decline": "Rechazar"
+  },
+  "nav": {
+    "home": "Inicio",
+    "work": "Trabajo",
+    "writing": "Escritura",
+    "workWithMe": "Trabaja Conmigo"
+  },
+  "home": {
+    "eyebrow": "David Raigoza. Diseñador de Productos e Ingeniero.",
+    "headline": {
+      "line1": "De la idea a la producción.",
+      "line2": "Un solo socio, sin pérdida de contexto.",
+      "line3": "En días, no en meses."
+    },
+    "intro": "Cada producto empieza como una conversación. En algún punto entre el primer boceto y el primer cliente, esa conversación se convierte en especificaciones, tickets, reuniones, revisiones y entregas. Cada traducción cambia la idea. Construí mi práctica para eliminar esas traducciones.",
+    "cta": "Trabaja Conmigo",
+    "selectedWork": {
+      "title": "Trabajo Seleccionado",
+      "intro1": "Distintas industrias. Una práctica continua de diseño.",
+      "intro2": "Los proyectos de abajo exploran un objetivo común: reducir la distancia entre una idea y las personas a las que espera llegar.",
+      "track": "Trayecto",
+      "scrollCue": "Desplázate para avanzar",
+      "continuedToLabs": "El desplazamiento vertical continúa hacia el laboratorio",
+      "horizontalSequence": "Secuencia de revelado horizontal",
+      "projectArtifact": "Artefacto del proyecto",
+      "interactiveArtifact": "Artefacto interactivo",
+      "tracks": [
+        {
+          "number": "01",
+          "title": "Validación rápida y productos impulsados por IA",
+          "question": "¿Cómo reducimos la incertidumbre antes de que las personas se comprometan?",
+          "support": "Las credenciales muestran dónde ha estado alguien. Estos proyectos muestran qué se puede construir hoy."
+        },
+        {
+          "number": "02",
+          "title": "Sistemas financieros sin fricción",
+          "question": "¿Cómo aprenden los desconocidos a confiar en sistemas financieros complejos?",
+          "support": "Traducir las fortalezas de las instituciones y el código en productos que las personas puedan usar de verdad."
+        },
+        {
+          "number": "03",
+          "title": "Experiencias digitales para productos físicos",
+          "question": "¿Cómo puede el trabajo artesanal sobrevivir su transición a las experiencias digitales?",
+          "support": "Preservar el carácter de un producto físico en lugar de reducirlo a una transacción."
+        }
+      ],
+      "projects": [
+        { "index": "01", "title": "Virtual Portfolio Hub", "subtitle": "Un portafolio impulsado por IA que convierte una muestra estática en una conversación interactiva.", "description": "Un portafolio interactivo que convierte el trabajo de proyectos en un perfil profesional consultable.", "linkLabel": "Ver caso de estudio" },
+        { "index": "02", "title": "Common Ground", "subtitle": "Un espacio operativo compartido para lograr alineación y colaboración en tiempo real.", "description": "Un espacio de trabajo en tiempo real para alinear equipos, información y decisiones en un solo lugar.", "linkLabel": "Ver caso de estudio" },
+        { "index": "03", "title": "QIE Neobank", "subtitle": "Hacer que las finanzas descentralizadas sean comprensibles antes de pedir confianza.", "description": "Una experiencia bancaria DeFi que traduce la complejidad del protocolo en una capa de producto más clara.", "linkLabel": "Ver caso de estudio" },
+        { "index": "04", "title": "Bruma Protocol", "subtitle": "Hacer comprensibles los estados de riesgo on-chain mientras los mercados se mueven.", "description": "Una interfaz que traduce los estados de smart contracts y oráculos en señales accionables.", "linkLabel": "Ver protocolo" },
+        { "index": "05", "title": "Pepe Matilda", "subtitle": "Diseñar la conexión entre un producto físico y la experiencia digital que lo rodea.", "description": "Una marca de joyería que conecta fabricación personalizada, diseño de producto, comercio electrónico y sistemas de marca.", "linkLabel": "Ver proyecto" },
+        { "index": "06", "title": "NextStep", "subtitle": "Explorar qué ocurre cuando un zapato se convierte en un producto digital.", "description": "Un concepto de calzado impreso en 3D que explora la personalización mediante el diseño de producto digital.", "linkLabel": "Ver caso de estudio" },
+        { "index": "07", "title": "Marigold Bloom", "subtitle": "Construir un ritual digital alrededor de un producto físico de cuidado de la piel.", "description": "Un concepto cosmético que conecta identidad visual, narrativa de producto e interacción digital.", "linkLabel": "Ver caso de estudio" },
+        { "index": "08", "title": "GitHub Core", "subtitle": "El código detrás de los sistemas, no solo de las capturas de pantalla.", "description": "Un repositorio abierto que hace inspeccionable la arquitectura detrás de proyectos seleccionados.", "linkLabel": "Ver en GitHub" }
+      ]
+    },
+    "contact": {
+      "eyebrow": "Consulta",
+      "heading1": "Sigamos",
+      "heading2": "la conversación.",
+      "body": "Cada producto comienza como una idea.\n\nLa parte difícil no es construirlo.\nEs entender qué quiere llegar a ser.\n\nYa sea que estés explorando una nueva empresa, mejorando un producto existente o intentando entender un problema complejo, estaré encantado de pensarlo contigo.\n\nA veces el resultado es un sitio web.\nA veces es un prototipo.\n\nA veces se trata de darte cuenta de que no necesitas construir lo que pensabas que necesitabas.\n\nCada conversación comienza en algún lugar."
+    },
+    "stackLabel": "Las herramientas que uso",
+    "writing": {
+      "label": "Escritura",
+      "allEssays": "Todos los ensayos"
+    },
+    "labs": {
+      "title": "En el laboratorio",
+      "eyebrow": "I+D e investigación activa",
+      "intro1": "Cada proyecto de cliente resuelve un problema específico.",
+      "intro2": "El trabajo de abajo explora preguntas más amplias.",
+      "intro3": "Algunos experimentos se convierten en productos. Otros se convierten en investigación. Otros abren formas completamente nuevas de pensar el diseño.",
+      "learnMore": "Saber más",
+      "closing1": "Todo lo que aparece aquí termina regresando al trabajo con clientes.",
+      "closing2": "La investigación informa la práctica.",
+      "closing3": "La práctica genera nuevas preguntas.",
+      "projects": [
+        { "title": "Vera", "description": "La interfaz conversacional para navegar productos, portafolios e ideas.", "status": "Activo", "linkLabel": "Lanzar Vera" },
+        { "title": "Common Ground", "description": "Un sistema basado en ontologías para investigar el posicionamiento de mercado mediante razonamiento por capas.", "status": "Beta" },
+        { "title": "Web3 Builder", "description": "Un entorno asistido por IA para diseñar, probar y desplegar sistemas de smart contracts.", "status": "En desarrollo" }
+      ]
+    },
+    "contactForm": {
+      "errors": { "required": "Todos los campos son obligatorios.", "email": "Ingresa un correo electrónico válido.", "generic": "Algo salió mal.", "connection": "Error de conexión. Inténtalo de nuevo." },
+      "success": { "title": "Mensaje enviado", "body": "Transmisión completa. Revisaré los detalles y te responderé pronto.", "again": "Enviar otro" },
+      "fields": {
+        "name": { "label": "Nombre", "placeholder": "Nombre de la persona o entidad" },
+        "email": { "label": "Correo", "placeholder": "correo@ruta.segura" },
+        "message": { "label": "Mensaje", "placeholder": "Requisitos del sistema o alcance de exploración..." }
+      },
+      "submitting": "Transmitiendo...",
+      "submit": "Enviar"
+    }
+  },
+  "about": {
+    "eyebrow": "¿POR QUÉ UN SOLO SOCIO?",
+    "heading1": "Una conversación.",
+    "heading2": "Un sistema continuo.",
+    "intro1": "Dirijo un estudio de producto ligero diseñado para pasar de la intención al producto funcional sin la carga de un equipo tradicional.",
+    "intro2": "La estrategia, el diseño, la ingeniería, la IA y el despliegue suelen tratarse como etapas separadas. Yo trabajo con todo como un sistema continuo para que las decisiones sigan conectadas desde la primera idea hasta el producto en manos de la gente.",
+    "bookCall": "Agendar una llamada de descubrimiento",
+    "explore": "Explorar el portafolio",
+    "principles": [
+      {
+        "index": "01",
+        "title": "Preservar la idea",
+        "description": "Cada decisión debe reforzar el problema original en lugar de diluirlo a través de entregas desconectadas."
+      },
+      {
+        "index": "02",
+        "title": "Construir como un sistema",
+        "description": "La estrategia, el diseño, la ingeniería, la IA y las decisiones de negocio evolucionan juntas en lugar de separarse en fases aisladas."
+      },
+      {
+        "index": "03",
+        "title": "Aprender de la realidad",
+        "description": "Lanzar no es el final. Cada producto genera evidencia que informa lo que viene después."
+      }
+    ],
+    "closing": {
+      "line1": "Los proyectos de abajo están conectados por más que la tecnología.",
+      "line2": "Sea cual sea el resultado — una plataforma de IA, un protocolo blockchain o un producto físico — el objetivo sigue siendo el mismo:",
+      "line3": "Reducir la distancia entre la intención y la comprensión."
+    }
+  },
+  "workWithMe": {
+    "eyebrow": "Trabaja Conmigo",
+    "heroTitle": "No necesitas armar un equipo de producto para cada problema de producto.",
+    "heroBody": "Ayudo a equipos de producto en etapa temprana a convertir ideas complejas en productos claros y funcionales, cerrando la brecha entre el pensamiento de producto, la arquitectura del sistema, el diseño y la ingeniería, en lugar de contratar varios especialistas y esperar que las entregas funcionen.",
+    "primaryCta": "Iniciar descubrimiento del cliente →",
+    "secondaryCta": "Agendar una llamada de descubrimiento",
+    "problem": {
+      "label": "El problema que resuelvo",
+      "title": "La mayoría de los equipos tiene las piezas. Les falta el tejido conectivo.",
+      "body1": "La estrategia se desconecta del diseño. El diseño se desconecta de la ingeniería. Las capacidades de IA se agregan a los productos sin un modelo de interacción coherente. Los sistemas técnicos complejos se vuelven difíciles de explicar, usar y entregar. Trabajo en todo el sistema, desde la definición hasta la producción, para cerrar esa brecha.",
+      "body2": "La alternativa usual es Fundador → PM → diseñador → desarrollador → QA → revisiones. Cada entrega agrega interpretación, retraso y retrabajo. Trabajar conmigo comprime eso en una sola línea: Fundador o equipo de producto ↔ yo."
+    },
+    "problems": [
+      "Ambigüedad del producto: sabes que algo debería existir, pero no qué es aún.",
+      "Desarrollo lento por demasiada coordinación entre especialistas.",
+      "Entregas entre diseño e ingeniería que pierden contexto cada vez que cambia de manos el trabajo.",
+      "Quedarse atrapado entre un prototipo y algo que realmente puedas lanzar.",
+      "Saber qué construir, pero no tener a la persona que lleve el trabajo hasta la meta.",
+      "Tener un equipo existente, pero necesitar capacidad extra de producto, diseño e ingeniería para una iniciativa concreta."
+    ],
+    "ways": {
+      "label": "Cómo podemos trabajar juntos",
+      "title": "Cuatro situaciones. Elige la que mejor se adapte a tu momento.",
+      "items": [
+        {
+          "tag": "01",
+          "title": "Encontrar el producto",
+          "subtitle": "Tienes una idea. Descubramos qué vale la pena construir realmente.",
+          "includes": [
+            "Estrategia de producto y planteamiento del problema",
+            "Investigación de UX",
+            "Dirección técnica",
+            "Evaluación de oportunidad de IA",
+            "Prototipo interactivo",
+            "Hoja de ruta del producto"
+          ],
+          "outcome": "Una dirección más clara del producto y un plan concreto para lo que construir a continuación."
+        },
+        {
+          "tag": "02",
+          "title": "Construir el producto",
+          "subtitle": "Desde la dirección del producto hasta un MVP funcional.",
+          "includes": [
+            "Estrategia de producto y UX/UI",
+            "Arquitectura del sistema",
+            "Desarrollo full-stack",
+            "Integraciones de IA",
+            "Base de datos y backend",
+            "Despliegue"
+          ],
+          "outcome": "Un producto funcional que pueda llegar a usuarios reales y generar aprendizaje real."
+        },
+        {
+          "tag": "03",
+          "title": "Acelerar el producto",
+          "subtitle": "Tu equipo no necesita otra pareja de manos. Necesita impulso.",
+          "includes": [
+            "Un nuevo producto o característica",
+            "Un prototipo o rediseño",
+            "Integración de IA",
+            "Una interacción técnica compleja",
+            "Una iniciativa que se ha detenido",
+            "Conectar producto, diseño e ingeniería"
+          ],
+          "outcome": "Una iniciativa que vuelve a moverse sin esperar a contratar y capacitar."
+        },
+        {
+          "tag": "04",
+          "title": "Mantener el producto en movimiento",
+          "subtitle": "Cuidado e iteración continua del producto sin otra contratación a tiempo completo.",
+          "includes": [
+            "Correcciones de errores y mantenimiento técnico",
+            "Actualizaciones de dependencias e infraestructura",
+            "Mejoras de rendimiento y UX",
+            "Iteraciones pequeñas de funciones",
+            "Analítica, SEO/AEO",
+            "Integraciones de IA"
+          ],
+          "outcome": "Un producto que sigue mejorando después del lanzamiento, sin necesidad de contratar más personal."
+        }
+      ]
+    },
+    "capabilities": {
+      "label": "Lo que aporto",
+      "intro": "No son cinco servicios separados. Un conjunto de habilidades conectado, aplicado a la situación que mejor te sirva.",
+      "items": [
+        "Estrategia de producto",
+        "Arquitectura del sistema",
+        "Diseño de producto",
+        "Ingeniería full-stack",
+        "Flujos nativos de IA"
+      ]
+    },
+    "engagement": {
+      "label": "Modelos de colaboración",
+      "title": "Vendidos como resultados, no como horas.",
+      "body": "Estos son puntos de partida típicos, no paquetes rígidos: el alcance real depende de la iniciativa. Cada nivel representa una profundidad distinta de compromiso, no un servicio separado e independiente.",
+      "ladder": [
+        { "label": "Claridad del producto", "price": "$300–$500" },
+        { "label": "Sprint de descubrimiento", "price": "$2,500+" },
+        { "label": "Asociación MVP", "price": "$10,000+" },
+        { "label": "Socio fraccional", "price": "Personalizado" }
+      ],
+      "pricing": [
+        {
+          "eyebrow": "Empieza aquí",
+          "title": "Claridad del producto",
+          "description": "¿No estás seguro de qué construir, corregir o priorizar? Obtén una evaluación enfocada antes de comprometerte con una colaboración mayor.",
+          "price": "$300–$500",
+          "idealFor": [
+            "Fundadores con una idea",
+            "Equipos inseguros sobre qué priorizar",
+            "Una segunda opinión antes de un compromiso mayor"
+          ],
+          "outcome": "Una visión clara de lo que merece atención y qué hacer a continuación.",
+          "cta": "Comenzar con Claridad del producto →"
+        },
+        {
+          "eyebrow": "Definir el producto",
+          "title": "Sprint de descubrimiento",
+          "description": "Convierte una idea de producto ambigua en una dirección definida, arquitectura y prototipo.",
+          "price": "Desde $2,500",
+          "idealFor": [
+            "Fundadores con una idea",
+            "Dirección y validación del producto",
+            "Planificación técnica"
+          ],
+          "outcome": "Una definición concreta del producto y una hoja de ruta lista para ejecución.",
+          "cta": "Comenzar cuestionario de descubrimiento →"
+        },
+        {
+          "eyebrow": "Construir el producto",
+          "title": "Asociación MVP",
+          "description": "Lleva un producto definido desde la estrategia y el diseño hasta la ingeniería y un MVP funcional.",
+          "price": "Desde $10,000",
+          "idealFor": [
+            "Startups y equipos pequeños",
+            "Productos de IA, SaaS y herramientas internas",
+            "Un producto con alcance listo para construir"
+          ],
+          "outcome": "Un producto funcional, construido desde la estrategia hasta el despliegue.",
+          "cta": "Agendar una llamada de descubrimiento →"
+        },
+        {
+          "eyebrow": "Acelerar el producto",
+          "title": "Socio de producto fraccional",
+          "description": "Apoyo continuo de estrategia, diseño e ingeniería del producto sin sumar otro equipo a tiempo completo.",
+          "price": "Compromiso mensual personalizado",
+          "idealFor": [
+            "Equipos que ya tienen ingenieros",
+            "Una iniciativa de producto definida",
+            "Equipos que necesitan dirección senior de producto"
+          ],
+          "outcome": "Impulso constante del producto sin un proceso de agencia.",
+          "cta": "Agendar una llamada de descubrimiento →"
+        }
+      ]
+    },
+    "process": {
+      "label": "Mi proceso",
+      "title": "Un ciclo continuo, no una cadena de entregas.",
+      "steps": [
+        { "step": "Entender", "description": "Aclara el problema, el usuario y las limitaciones antes de que la solución tome forma." },
+        { "step": "Modelar", "description": "Mapea el sistema — datos, lógica y arquitectura técnica — para que la complejidad sea visible desde el principio." },
+        { "step": "Diseñar", "description": "Da forma a la interfaz y la experiencia en torno al uso real, no a suposiciones." },
+        { "step": "Construir", "description": "Lanza código de producción, iterando en abierto mientras el producto toma forma." },
+        { "step": "Desplegar", "description": "Publica para usuarios reales con monitoreo, seguridad y estabilidad en su sitio." },
+        { "step": "Aprender", "description": "Estudia lo que revelan los datos y los usuarios y vuelve a incorporarlo al siguiente ciclo." }
+      ]
+    },
+    "products": {
+      "label": "Productos que estoy construyendo",
+      "title": "No solo doy servicios. También construyo software original.",
+      "items": [
+        { "name": "Vera", "description": "Interfaz de IA para navegar productos y portafolios.", "status": "En desarrollo" },
+        { "name": "Common Ground", "description": "Análisis ontológico de posicionamiento de mercado.", "status": "En desarrollo" },
+        { "name": "Web3 Builder", "description": "Constructor de aplicaciones Web3 con IA, despliegue y pruebas automatizadas.", "status": "En desarrollo" }
+      ]
+    },
+    "discovery": {
+      "label": "Descubrimiento del cliente",
+      "title": "Entendamos qué estamos construyendo.",
+      "body": "Este es el primer paso para entender tu negocio, tus clientes y lo que intentas lograr. No necesitas conocer terminología de diseño o técnica."
+    },
+    "faqs": {
+      "label": "Preguntas frecuentes",
+      "title": "Todo lo que necesitas saber antes de hablar.",
+      "items": [
+        { "q": "¿Trabajas internacionalmente?", "a": "Sí. Estoy basado en Medellín y trabajo de forma remota con clientes internacionales." },
+        { "q": "¿Trabajas con startups?", "a": "Sí: especialmente con fundadores y equipos pequeños de producto donde el pensamiento y la ejecución del producto deben mantenerse estrechamente conectados." },
+        { "q": "¿Puedo unirme a un equipo existente?", "a": "Sí. El rol puede ser por proyecto o continuo, según la iniciativa del producto." },
+        { "q": "¿Construyes el software tú mismo?", "a": "Sí. Manejo el trabajo de producto, diseño e ingeniería directamente en lugar de repartir el proyecto entre un equipo grande de producción." },
+        { "q": "¿Usas IA?", "a": "Sí. Las herramientas y flujos nativos de IA forman parte del proceso del estudio, pero la IA no reemplaza el juicio del producto, las decisiones de ingeniería ni la validación humana." },
+        { "q": "¿Y si solo tengo una idea?", "a": "Ese es un buen ajuste para el Sprint de Descubrimiento: primero hay que averiguar qué vale la pena construir realmente." },
+        { "q": "¿Y si ya tengo un equipo?", "a": "Puedo unirme a una iniciativa específica donde el producto, el diseño y la ingeniería necesiten moverse juntos." },
+        { "q": "¿Construyes productos Web3?", "a": "Sí, pero el trabajo complejo de Web3 y protocolos se trata como una colaboración especializada. Para smart contracts, verificación formal y sistemas sensibles a la seguridad, contacta directamente." },
+        { "q": "¿Qué es exactamente Claridad del Producto?", "a": "Un diagnóstico pagado, no un Sprint de Descubrimiento con descuento. Responde qué está pasando realmente y qué priorizar después, y puede llevar a un Sprint de Descubrimiento si hace falta una definición más profunda del producto." }
+      ]
+    }
+  },
+  "common": {
+    "viewProject": "Ver proyecto",
+    "readMore": "Leer más"
+  }
+}

@@ -1,8 +1,10 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 export default function ContactForm() {
+  const t = useTranslations('home.contactForm')
   const [contactName, setContactName] = useState('')
   const [contactEmail, setContactEmail] = useState('')
   const [contactMessage, setContactMessage] = useState('')
@@ -15,13 +17,13 @@ export default function ContactForm() {
 
   const handleContactSubmit = async () => {
     if (!contactName.trim() || !contactEmail.trim() || !contactMessage.trim()) {
-      setContactError('All fields are required.')
+      setContactError(t('errors.required'))
       setContactStatus('error')
       return
     }
 
     if (!isValidEmail(contactEmail)) {
-      setContactError('Please enter a valid email address.')
+      setContactError(t('errors.email'))
       setContactStatus('error')
       return
     }
@@ -36,7 +38,7 @@ export default function ContactForm() {
       })
       const data = await res.json()
       if (!res.ok || data.error) {
-        setContactError(data.error ?? 'Something went wrong.')
+        setContactError(data.error ?? t('errors.generic'))
         setContactStatus('error')
       } else {
         setContactStatus('success')
@@ -45,7 +47,7 @@ export default function ContactForm() {
         setContactMessage('')
       }
     } catch {
-      setContactError('Connection error. Try again.')
+      setContactError(t('errors.connection'))
       setContactStatus('error')
     }
   }
@@ -96,8 +98,8 @@ export default function ContactForm() {
         gap: '0.85rem',
         boxShadow: '0 24px 48px -12px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.02)'
       }}>
-        <p style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--accent)', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 600 }}>Message sent ✓</p>
-        <p style={{ fontFamily: 'var(--sans)', fontSize: '0.875rem', color: 'var(--muted)', lineHeight: 1.7 }}>Transmission complete. I'll review the parameters and get back to you shortly.</p>
+        <p style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--accent)', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 600 }}>{t('success.title')} ✓</p>
+        <p style={{ fontFamily: 'var(--sans)', fontSize: '0.875rem', color: 'var(--muted)', lineHeight: 1.7 }}>{t('success.body')}</p>
         
         <button 
           onClick={() => setContactStatus('idle')} 
@@ -123,7 +125,7 @@ export default function ContactForm() {
           onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.07)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)' }}
           onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)' }}
         >
-          Send another
+          {t('success.again')}
         </button>
       </div>
     )
@@ -146,39 +148,39 @@ export default function ContactForm() {
       boxShadow: '0 24px 48px -12px rgba(0, 0, 0, 0.75)'
     }}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
-        <label style={{ fontFamily: 'var(--mono)', fontSize: '0.58rem', color: 'var(--muted)', letterSpacing: '0.15em', textTransform: 'uppercase', opacity: 0.6 }}>Name</label>
+        <label style={{ fontFamily: 'var(--mono)', fontSize: '0.58rem', color: 'var(--muted)', letterSpacing: '0.15em', textTransform: 'uppercase', opacity: 0.6 }}>{t('fields.name.label')}</label>
         <input 
           type="text" 
           value={contactName} 
           onChange={e => setContactName(e.target.value)} 
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
-          placeholder="Identity / Entity name" 
+          placeholder={t('fields.name.placeholder')} 
           style={inputFieldStyles} 
         />
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
-        <label style={{ fontFamily: 'var(--mono)', fontSize: '0.58rem', color: 'var(--muted)', letterSpacing: '0.15em', textTransform: 'uppercase', opacity: 0.6 }}>Email</label>
+        <label style={{ fontFamily: 'var(--mono)', fontSize: '0.58rem', color: 'var(--muted)', letterSpacing: '0.15em', textTransform: 'uppercase', opacity: 0.6 }}>{t('fields.email.label')}</label>
         <input 
           type="email" 
           value={contactEmail} 
           onChange={e => setContactEmail(e.target.value)} 
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
-          placeholder="secure@routing.path" 
+          placeholder={t('fields.email.placeholder')} 
           style={inputFieldStyles} 
         />
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
-        <label style={{ fontFamily: 'var(--mono)', fontSize: '0.58rem', color: 'var(--muted)', letterSpacing: '0.15em', textTransform: 'uppercase', opacity: 0.6 }}>Message</label>
+        <label style={{ fontFamily: 'var(--mono)', fontSize: '0.58rem', color: 'var(--muted)', letterSpacing: '0.15em', textTransform: 'uppercase', opacity: 0.6 }}>{t('fields.message.label')}</label>
         <textarea 
           value={contactMessage} 
           onChange={e => setContactMessage(e.target.value)} 
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
-          placeholder="System requirements or exploration scope..." 
+          placeholder={t('fields.message.placeholder')} 
           rows={5} 
           style={{ ...inputFieldStyles, resize: 'vertical', lineHeight: 1.6 }} 
         />
@@ -231,7 +233,7 @@ export default function ContactForm() {
           }
         }}
       >
-        {contactStatus === 'loading' ? 'Transmitting...' : 'Submit'}
+        {contactStatus === 'loading' ? t('submitting') : t('submit')}
       </button>
     </div>
   )

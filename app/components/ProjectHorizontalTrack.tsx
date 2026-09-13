@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { useTranslations } from 'next-intl'
 import ProjectCard, { ProjectCardProps } from './ProjectCard'
 
 export interface TrackSection {
@@ -17,6 +18,7 @@ interface ProjectHorizontalTrackProps {
 }
 
 export default function ProjectHorizontalTrack({ tracks }: ProjectHorizontalTrackProps) {
+  const t = useTranslations('home.selectedWork')
   const runwayRef = useRef<HTMLDivElement>(null)
   const trackRef = useRef<HTMLDivElement>(null)
   const [activeProjectIndex, setActiveProjectIndex] = useState(0)
@@ -198,7 +200,7 @@ export default function ProjectHorizontalTrack({ tracks }: ProjectHorizontalTrac
                   textTransform: 'uppercase',
                 }}
               >
-                Track {currentActiveProject?.trackNumber}
+                {t('track')} {currentActiveProject?.trackNumber}
               </span>
               <span style={{ color: 'var(--border)' }}>/</span>
               <span
@@ -335,7 +337,7 @@ export default function ProjectHorizontalTrack({ tracks }: ProjectHorizontalTrac
               textTransform: 'uppercase',
             }}
           >
-            Scroll down to advance · {activeProjectIndex === totalProjects - 1 ? 'Continued vertical scroll exits to Labs' : 'Horizontal reveal sequence'}
+            {t('scrollCue')} · {activeProjectIndex === totalProjects - 1 ? t('continuedToLabs') : t('horizontalSequence')}
           </p>
 
           <p

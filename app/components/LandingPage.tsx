@@ -1,7 +1,9 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import HeroSection from './HeroSection'
-import ProjectHorizontalTrack from './ProjectHorizontalTrack'
+import ProjectHorizontalTrack, { TrackSection } from './ProjectHorizontalTrack'
+import type { ProjectCardProps } from './ProjectCard'
 import ContactForm from './ContactForm'
 import EssaySection from './EssaySection'
 import TechStackBanner from './TechStackBanner'
@@ -11,7 +13,7 @@ import Labs from './Labs'
 // ── PROJECT TRACKS (unchanged content, metadata, tags, links, chronology) ─────
 
 // Track 01: Rapid Validation & AI-Driven Products
-const productProjects = [
+const productProjects: ProjectCardProps[] = [
   {
     index: '01',
     year: '2026',
@@ -43,7 +45,7 @@ const productProjects = [
 ]
 
 // Track 02: Friction-Free Financial Systems
-const web3Projects = [
+const web3Projects: ProjectCardProps[] = [
   {
     index: '03',
     year: '2026',
@@ -75,7 +77,7 @@ const web3Projects = [
 ]
 
 // Track 03: Digital Experiences for Physical Products
-const brandProjects = [
+const brandProjects: ProjectCardProps[] = [
   {
     index: '05',
     year: '2011–2016',
@@ -134,7 +136,7 @@ const brandProjects = [
   },
 ]
 
-const tracks = [
+const tracks: TrackSection[] = [
   {
     number: '01',
     title: 'Rapid Validation & AI-Driven Products',
@@ -163,6 +165,38 @@ const tracks = [
 
 // ── LANDING PAGE MAIN COMPONENT ────────────────────────────────────────────
 export default function LandingPage() {
+  const t = useTranslations('home')
+
+  const localizedTracks = t.raw('selectedWork.tracks') as Array<{
+    number: string
+    title: string
+    question: string
+    support: string
+  }>
+  const localizedProjects = t.raw('selectedWork.projects') as Array<{
+    index: string
+    title: string
+    subtitle: string
+    description: string
+    linkLabel: string
+  }>
+
+  const translatedProjects = (projects: ProjectCardProps[]) => projects.map((project) => {
+    const translation = localizedProjects.find((item) => item.index === project.index)
+    return translation ? { ...project, ...translation } : project
+  })
+
+  const translatedTracks = tracks.map((track) => {
+    const translation = localizedTracks.find((item) => item.number === track.number)
+    const projects = track.number === '01'
+      ? translatedProjects(productProjects)
+      : track.number === '02'
+        ? translatedProjects(web3Projects)
+        : translatedProjects(brandProjects)
+
+    return translation ? { ...track, ...translation, projects } : { ...track, projects }
+  })
+
   return (
     <main
       style={{
@@ -239,7 +273,7 @@ export default function LandingPage() {
                 marginBottom: '1.25rem',
               }}
             >
-              Selected Work
+              {t('selectedWork.title')}
             </h2>
 
             <p
@@ -251,17 +285,16 @@ export default function LandingPage() {
                 fontWeight: 300,
               }}
             >
-              Different industries. One continuous design practice.
+              {t('selectedWork.intro1')}
               <br />
               <br />
-              The projects below explore a common objective: reducing the
-              distance between an idea and the people it hopes to reach.
+              {t('selectedWork.intro2')}
             </p>
           </div>
         </div>
 
         {/* Vertical scroll runway -> Sticky viewing frame -> Horizontal project track */}
-        <ProjectHorizontalTrack tracks={tracks} />
+        <ProjectHorizontalTrack tracks={translatedTracks} />
       </section>
 
       <Labs />
@@ -310,7 +343,7 @@ export default function LandingPage() {
                 marginBottom: '1.5rem',
               }}
             >
-              Inquiry
+              {t('contact.eyebrow')}
             </p>
             <h2
               style={{
@@ -323,9 +356,9 @@ export default function LandingPage() {
                 marginBottom: '1.5rem',
               }}
             >
-              Let's continue
+              {t('contact.heading1')}
               <br />
-              the conversation.
+              {t('contact.heading2')}
             </h2>
             <p
               style={{
@@ -336,19 +369,7 @@ export default function LandingPage() {
                 maxWidth: '36ch',
               }}
             >
-              Every product begins as an idea.
-
-              The difficult part isn't building it.
-              It's understanding what it wants to become.
-
-              Whether you're exploring a new venture, improving an existing product, or trying to make sense of a complex problem, I'd be happy to think it through with you.
-
-              Sometimes the outcome is a website.
-              Sometimes it's a prototype.
-
-              Sometimes it's realizing you don't need to build what you thought you needed.
-
-              Every conversation starts somewhere.
+              {t('contact.body')}
             </p>
             <p
               style={{

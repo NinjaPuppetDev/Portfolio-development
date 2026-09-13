@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 import EssayCard from './EssayCard'
 import { essays } from '../../lib/essays'
 
@@ -9,6 +10,7 @@ import { essays } from '../../lib/essays'
 // it isn't meant to compete with the case studies for a founder's attention
 // mid-funnel. Not in the header nav for the same reason.
 export default function EssaySection() {
+  const t = useTranslations('home.writing')
   if (essays.length === 0) return null
 
   // Sort essays descending by date (latest first)
@@ -52,7 +54,7 @@ export default function EssaySection() {
             margin: 0,
           }}
         >
-          Writing
+          {t('label')}
         </p>
         <Link
           href="/writing"
@@ -65,7 +67,7 @@ export default function EssaySection() {
             textDecoration: 'none',
           }}
         >
-          All essays →
+          {t('allEssays')} →
         </Link>
       </div>
 

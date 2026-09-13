@@ -3,9 +3,13 @@ export interface ProjectDetail {
   title: string;
   subtitle: string;
   fullDescription: string;
+  overview?: string;
+  challenges?: string[];
+  results?: string[];
   tags: string[];
   metrics: string[];
   technicalBreakdown: string;
+  locales?: Partial<Record<'en' | 'es', Partial<Omit<ProjectDetail, 'locales'>>>>;
 }
 
 export const ALL_PROJECTS: Record<string, ProjectDetail> = {
@@ -16,7 +20,26 @@ export const ALL_PROJECTS: Record<string, ProjectDetail> = {
     fullDescription: 'Built during an AI bootcamp competition, Virtual Portfolio Hub combines conversational AI, dynamic project discovery, and contextual interfaces to help people understand a portfolio through interaction rather than browsing alone.',
     tags: ['Next.js', 'Google AI', 'Tailwind CSS', 'UX Architecture'],
     metrics: ['Award-winning AI bootcamp competition entry', 'Conversational agent + dynamic project filtering', 'Contextual telemetry layer'],
-    technicalBreakdown: 'Built with Next.js and Tailwind CSS, integrating Google AI agents directly into the portfolio navigation layer. Replaces static case-study browsing with a conversational interface that routes visitors dynamically based on stated intent.'
+    technicalBreakdown: 'Built with Next.js and Tailwind CSS, integrating Google AI agents directly into the portfolio navigation layer. Replaces static case-study browsing with a conversational interface that routes visitors dynamically based on stated intent.',
+    locales: {
+      es: {
+        title: 'Virtual Portfolio Hub',
+        subtitle: 'Un portafolio impulsado por IA que convierte una muestra estática en una conversación interactiva.',
+        overview: 'Virtual Portfolio Hub explora una nueva relación entre portafolio, navegación y criterio profesional: una experiencia conversacional que permite descubrir proyectos por intención, no solo recorrer una galería.',
+        fullDescription: 'Construido durante una competencia de bootcamp de IA, Virtual Portfolio Hub combina IA conversacional, descubrimiento dinámico de proyectos e interfaces contextuales para ayudar a las personas a comprender un portafolio mediante la interacción, en lugar de limitarse a navegarlo.',
+        challenges: [
+          'Traducir una trayectoria profesional amplia en un sistema que pudiera orientar a cada visitante sin convertir la experiencia en un cuestionario.',
+          'Diseñar una arquitectura donde el modelo pudiera operar la interfaz, no solo redactar respuestas sobre ella.',
+          'Mantener el juicio humano y la trazabilidad del contenido mientras se experimentaba con una interfaz asistida por IA.'
+        ],
+        results: [
+          'Una navegación conversacional capaz de llevar a cada visitante hacia proyectos relevantes según su intención.',
+          'Un artefacto de cámara oscura: la interfaz revela relaciones que normalmente permanecen ocultas detrás del portafolio, proyectando señales de experiencia y contexto sobre una superficie legible.',
+          'Una demostración de ingeniería de producto en la que estrategia, diseño, arquitectura y experimentación con IA evolucionan como un solo sistema.'
+        ],
+        technicalBreakdown: 'Construido con Next.js y Tailwind CSS, integrando agentes de Google AI directamente en la capa de navegación del portafolio. El sistema reemplaza el recorrido estático por una interfaz que interpreta la intención y dirige la experiencia dinámicamente. El proyecto funciona como un pequeño manifiesto de un renacimiento de la ingeniería: volver a conectar criterio de producto, diseño de interacción y ejecución técnica en una misma práctica.'
+      }
+    }
   },
   'qie-neobank': {
     slug: 'qie-neobank',
@@ -81,4 +104,12 @@ export const ALL_PROJECTS: Record<string, ProjectDetail> = {
     metrics: ['Omnichannel design ecosystem[cite: 2]', 'Ritual-driven narrative logic[cite: 2]'],
     technicalBreakdown: 'Designed a fully aligned brand system translating earthy color spaces and elegant typography cleanly across physical web layouts and active social channels[cite: 2]. Built high-fidelity UI design flows and custom thematic product illustrations using Figma and spatial rendering suites[cite: 2].'
   }
+}
+
+export function getProject(slug: string, locale: string = 'en') {
+  const project = ALL_PROJECTS[slug]
+  if (!project) return undefined
+
+  const localizedProject = project.locales?.[locale as 'en' | 'es']
+  return localizedProject ? { ...project, ...localizedProject } : project
 }

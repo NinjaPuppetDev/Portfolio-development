@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import type { ReactNode } from 'react'
 import MobileMenu from './MobileMenu'
 
 interface NavItem {
@@ -20,9 +21,10 @@ interface MobileNavigationProps {
   navItems: NavItem[]
   pathname: string
   showActiveState: boolean
+  languageSwitcher: ReactNode
 }
 
-export default function MobileNavigation({ theme, navItems, pathname, showActiveState }: MobileNavigationProps) {
+export default function MobileNavigation({ theme, navItems, pathname, showActiveState, languageSwitcher }: MobileNavigationProps) {
   const [isOpen, setIsOpen] = useState(false)
   const { isLightPage, textPrimary } = theme
 
@@ -74,27 +76,30 @@ export default function MobileNavigation({ theme, navItems, pathname, showActive
           </span>
         </Link>
 
-        <button
-          aria-label="Open navigation menu"
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen(true)}
-          style={{
-            background: 'transparent',
-            border: 'none',
-            padding: '0.5rem',
-            margin: '-0.5rem',
-            cursor: 'pointer',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '4px',
-            justifyContent: 'center',
-            alignItems: 'flex-end',
-          }}
-        >
-          <span style={{ width: '18px', height: '1.5px', backgroundColor: textPrimary }} />
-          <span style={{ width: '18px', height: '1.5px', backgroundColor: textPrimary }} />
-          <span style={{ width: '12px', height: '1.5px', backgroundColor: textPrimary }} />
-        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          {languageSwitcher}
+          <button
+            aria-label="Open navigation menu"
+            aria-expanded={isOpen}
+            onClick={() => setIsOpen(true)}
+            style={{
+              background: 'transparent',
+              border: 'none',
+              padding: '0.5rem',
+              margin: '-0.5rem',
+              cursor: 'pointer',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '4px',
+              justifyContent: 'center',
+              alignItems: 'flex-end',
+            }}
+          >
+            <span style={{ width: '18px', height: '1.5px', backgroundColor: textPrimary }} />
+            <span style={{ width: '18px', height: '1.5px', backgroundColor: textPrimary }} />
+            <span style={{ width: '12px', height: '1.5px', backgroundColor: textPrimary }} />
+          </button>
+        </div>
       </nav>
 
       <MobileMenu

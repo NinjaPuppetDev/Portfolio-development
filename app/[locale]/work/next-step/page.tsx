@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useLocale } from 'next-intl'
 
 // ─── CONSTANTS ────────────────────────────────────────────────────────────────
 const VIMEO_URL     = 'https://drive.google.com/file/d/1XhNZ-JZM1RA1e2w3drjRMUo0DidQGWO_/preview'
@@ -70,6 +71,7 @@ const NS = {
 
 // ─── COMPONENT ────────────────────────────────────────────────────────────────
 export default function NextStepCaseStudy() {
+  const locale = useLocale()
   const [mounted, setMounted] = useState(false)
   useEffect(() => { setMounted(true) }, [])
 
@@ -457,7 +459,7 @@ export default function NextStepCaseStudy() {
           flexWrap: 'wrap',
           gap: '1rem',
         }}>
-          <Link href="/" style={{ fontFamily: NS.mono, fontSize: '0.6rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em', textDecoration: 'none', transition: 'color 0.2s' }}
+          <Link href={`/${locale}`} style={{ fontFamily: NS.mono, fontSize: '0.6rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={e => (e.currentTarget.style.color = NS.green)}
             onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.3)')}
           >

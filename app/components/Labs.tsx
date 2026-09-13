@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { useTranslations } from 'next-intl'
 
 export interface LabProject {
   title: string
@@ -38,6 +39,13 @@ const defaultLabProjects: LabProject[] = [
 ]
 
 export default function Labs({ projects = defaultLabProjects }: LabsProps) {
+  const t = useTranslations('home.labs')
+  const localizedProjects = t.raw('projects') as Array<{ title: string; description: string; status: string; linkLabel?: string }>
+  const translatedProjects = projects.map((project) => {
+    const translation = localizedProjects.find((item) => item.title === project.title)
+    return translation ? { ...project, ...translation } : project
+  })
+
   return (
     <section
       id="labs"
@@ -80,7 +88,7 @@ export default function Labs({ projects = defaultLabProjects }: LabsProps) {
               margin: 0,
             }}
           >
-            In the Lab
+            {t('title')}
           </h2>
           <span
             style={{
@@ -91,7 +99,7 @@ export default function Labs({ projects = defaultLabProjects }: LabsProps) {
               textTransform: 'uppercase',
             }}
           >
-            R&D & Active Research
+            {t('eyebrow')}
           </span>
         </div>
 
@@ -109,10 +117,10 @@ export default function Labs({ projects = defaultLabProjects }: LabsProps) {
           }}
         >
           <p style={{ margin: 0, color: 'var(--text, #FFFFFF)' }}>
-            Every client project solves a specific problem.
+            {t('intro1')}
           </p>
           <p style={{ margin: 0 }}>
-            The work below explores broader questions.
+            {t('intro2')}
           </p>
           <p
             style={{
@@ -120,8 +128,7 @@ export default function Labs({ projects = defaultLabProjects }: LabsProps) {
               fontSize: 'clamp(0.95rem, 1.8vw, 1.1rem)',
             }}
           >
-            Some experiments become products. Some become research. Some become
-            entirely new ways of thinking about design.
+            {t('intro3')}
           </p>
         </div>
       </header>
@@ -134,7 +141,7 @@ export default function Labs({ projects = defaultLabProjects }: LabsProps) {
           flexDirection: 'column',
         }}
       >
-        {projects.map((item, idx) => (
+        {translatedProjects.map((item) => (
           <article
             key={item.title}
             role="listitem"
@@ -244,7 +251,7 @@ export default function Labs({ projects = defaultLabProjects }: LabsProps) {
                     e.currentTarget.style.opacity = '1'
                   }}
                 >
-                  <span>{item.linkLabel || 'Learn More'}</span>
+                  <span>{item.linkLabel || t('learnMore')}</span>
                   <span aria-hidden="true">→</span>
                 </a>
               )}
@@ -268,12 +275,12 @@ export default function Labs({ projects = defaultLabProjects }: LabsProps) {
         }}
       >
         <p style={{ margin: 0, color: 'var(--text, #FFFFFF)' }}>
-          Everything here eventually finds its way back into client work.
+          {t('closing1')}
         </p>
         <p style={{ margin: 0 }}>
-          Research informs practice.
+          {t('closing2')}
           <br />
-          Practice generates new questions.
+          {t('closing3')}
         </p>
       </footer>
     </section>

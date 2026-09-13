@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useLocale } from 'next-intl'
 
 // ─── CONSTANTS ───────────────────────────────────────────────────────────────
 const SQUARESPACE_VIDEO_URL = '/work/pepe-matilda/pepe-matilda-squarespace-walkthrough.mp4'
@@ -89,6 +90,7 @@ const jsonLd = {
 }
 
 export default function PepeMatildaCaseStudy() {
+  const locale = useLocale()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => { setMounted(true) }, [])
@@ -589,7 +591,7 @@ export default function PepeMatildaCaseStudy() {
           position: 'relative',
           zIndex: 1,
         }}>
-          <Link href="/" style={{ fontFamily: 'var(--mono)', fontSize: '0.6rem', color: 'var(--muted)', letterSpacing: '0.1em', textDecoration: 'none' }}>
+          <Link href={`/${locale}`} style={{ fontFamily: 'var(--mono)', fontSize: '0.6rem', color: 'var(--muted)', letterSpacing: '0.1em', textDecoration: 'none' }}>
             ← Back to All Case Studies
           </Link>
           <span style={{ fontFamily: 'var(--mono)', fontSize: '0.6rem', color: 'var(--muted)', letterSpacing: '0.1em' }}>

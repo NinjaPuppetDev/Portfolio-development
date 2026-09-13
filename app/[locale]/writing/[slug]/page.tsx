@@ -1,25 +1,29 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { essays, getEssay } from '../../../lib/essays'
+import { essays, getEssay } from '../../../../lib/essays'
+
+const locales = ['en', 'es'] as const
 
 export function generateStaticParams() {
-  return essays.map(e => ({ slug: e.slug }))
+  return locales.flatMap((locale) =>
+    essays.map((e) => ({ locale, slug: e.slug }))
+  )
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ locale: string; slug: string }>
 }): Promise<Metadata> {
-  const { slug } = await params
-  const essay = getEssay(slug)
+  const { locale, slug } = await params
+  const essay = getEssay(slug, locale)
   if (!essay) return {}
   return {
     title: `${essay.title} — David Raigoza`,
     description: essay.dek,
     alternates: {
-      canonical: `https://davidraigoza.design/writing/${essay.slug}`,
+      canonical: `https://davidraigoza.design/${locale}/writing/${essay.slug}`,
     },
   }
 }
@@ -38,10 +42,10 @@ function renderFormattedText(text: string) {
 export default async function EssayPage({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ locale: string; slug: string }>
 }) {
-  const { slug } = await params
-  const essay = getEssay(slug)
+  const { locale, slug } = await params
+  const essay = getEssay(slug, locale)
   if (!essay) return notFound()
 
   // Split raw essay body by double line breaks into distinct content blocks
@@ -60,7 +64,7 @@ export default async function EssayPage({
     >
       <article style={{ maxWidth: '680px', margin: '0 auto' }}>
         <Link
-          href="/writing"
+          href={`/${locale}/writing`}
           style={{
             fontFamily: 'var(--mono)',
             fontSize: '0.65rem',

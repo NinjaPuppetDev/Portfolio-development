@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useLocale } from 'next-intl'
 
 // ─── CONSTANTS ────────────────────────────────────────────────────────────────
 const V2_VIDEO_URL    = '/work/marigold/marigold-bloom-video.mp4'
@@ -113,6 +114,7 @@ const jsonLd = {
 
 // ─── COMPONENT ────────────────────────────────────────────────────────────────
 export default function MarigoldBloomCaseStudy() {
+  const locale = useLocale()
   const [mounted, setMounted] = useState(false)
   useEffect(() => { setMounted(true) }, [])
 
@@ -550,7 +552,7 @@ export default function MarigoldBloomCaseStudy() {
           background: MG.bg,
         }}>
           <Link
-            href="/"
+            href={`/${locale}`}
             style={{ fontFamily: MG.mono, fontSize: '0.6rem', color: MG.muted, letterSpacing: '0.1em', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={e => (e.currentTarget.style.color = MG.rust)}
             onMouseLeave={e => (e.currentTarget.style.color = MG.muted)}

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 // ─── CONTENT ─────────────────────────────────────────────────────────────────
 
@@ -861,6 +862,16 @@ function DiscoveryForm() {
 export default function WorkWithMePage() {
   const [mounted, setMounted] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const t = useTranslations('workWithMe')
+
+  const problemList = (t.raw('problems') as string[]) || PROBLEMS
+  const waysList = (t.raw('ways.items') as Array<{ tag: string; title: string; subtitle: string; includes: string[]; outcome: string }>) || WAYS
+  const capabilityList = (t.raw('capabilities.items') as string[]) || CAPABILITIES
+  const commitmentSteps = (t.raw('engagement.ladder') as Array<{ label: string; price: string }>) || COMMITMENT_LADDER
+  const pricingList = (t.raw('engagement.pricing') as Array<{ eyebrow: string; title: string; description: string; price: string; idealFor: string[]; outcome: string; cta: string | { label: string; href: string } }>) || PRICING
+  const processList = (t.raw('process.steps') as Array<{ step: string; description: string }>) || PROCESS
+  const productList = (t.raw('products.items') as Array<{ name: string; description: string; status: string }>) || PRODUCTS
+  const faqList = (t.raw('faqs.items') as Array<{ q: string; a: string }>) || FAQS
 
   useEffect(() => { setMounted(true) }, [])
 
@@ -900,7 +911,7 @@ export default function WorkWithMePage() {
           marginBottom: '1.5rem',
           ...fadeIn(0.1)
         }}>
-          Work With Me
+          {t('eyebrow')}
         </p>
 
         <h1 style={{
@@ -913,28 +924,26 @@ export default function WorkWithMePage() {
           maxWidth: '20ch',
           ...fadeIn(0.2)
         }}>
-          You don't need to assemble a product team for every product problem.
+          {t('heroTitle')}
         </h1>
 
         <p style={{
           fontFamily: 'var(--sans)',
           fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
           color: 'var(--text)',
-          maxWidth: '58ch',
           lineHeight: 1.6,
           fontWeight: 300,
-          marginBottom: '2.5rem',
           ...fadeIn(0.3)
         }}>
-          I help early-stage product teams turn complex ideas into clear, working products — closing the gap between product thinking, system architecture, design and engineering, instead of hiring multiple specialists and hoping the handoffs hold.
+          {t('heroBody')}
         </p>
 
         <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'center', ...fadeIn(0.4) }}>
           <a href="#discovery" style={primaryButtonStyle}>
-            Start Client Discovery →
+            {t('primaryCta')}
           </a>
           <a href="https://cal.com/davidraigoza" target="_blank" rel="noopener noreferrer" style={secondaryButtonStyle}>
-            Book a Discovery Call
+            {t('secondaryCta')}
           </a>
         </div>
       </section>
@@ -948,8 +957,8 @@ export default function WorkWithMePage() {
         position: 'relative',
         zIndex: 1,
       }}>
-        <Label>The Problem I Solve</Label>
-        <SectionTitle>Most teams have the pieces. They're missing the connective tissue.</SectionTitle>
+        <Label>{t('problem.label')}</Label>
+        <SectionTitle>{t('problem.title')}</SectionTitle>
 
         <p style={{
           fontFamily: 'var(--sans)',
@@ -960,7 +969,7 @@ export default function WorkWithMePage() {
           maxWidth: '68ch',
           marginTop: '1.75rem',
         }}>
-          Strategy gets disconnected from design. Design gets disconnected from engineering. AI capabilities get bolted onto products without a coherent interaction model. Complex technical systems become hard to explain, use and ship. I work across the system, from definition through production, to close that gap.
+          {t('problem.body1')}
         </p>
 
         <p style={{
@@ -972,7 +981,7 @@ export default function WorkWithMePage() {
           maxWidth: '68ch',
           marginTop: '1rem',
         }}>
-          The usual alternative is Founder → PM → designer → developer → QA → revisions. Every handoff adds interpretation, delay and rework. Working with me compresses that into one line: Founder or product team ↔ me.
+          {t('problem.body2')}
         </p>
 
         <div style={{
@@ -981,7 +990,7 @@ export default function WorkWithMePage() {
           gap: '0.5rem',
           marginTop: '2.5rem',
         }}>
-          {PROBLEMS.map((p) => (
+          {problemList.map((p) => (
             <div key={p} style={{
               display: 'flex',
               gap: '0.75rem',
@@ -1006,8 +1015,8 @@ export default function WorkWithMePage() {
         position: 'relative',
         zIndex: 1,
       }}>
-        <Label>How We Can Work Together</Label>
-        <SectionTitle>Four situations. Pick the one that matches where you are.</SectionTitle>
+        <Label>{t('ways.label')}</Label>
+        <SectionTitle>{t('ways.title')}</SectionTitle>
 
         <div style={{
           display: 'grid',
@@ -1015,7 +1024,7 @@ export default function WorkWithMePage() {
           gap: '1.5rem',
           marginTop: '3rem',
         }}>
-          {WAYS.map((w) => (
+          {waysList.map((w) => (
             <div key={w.title} style={cardStyle}>
               <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--accent)' }}>
                 {w.tag}
@@ -1059,12 +1068,12 @@ export default function WorkWithMePage() {
         position: 'relative',
         zIndex: 1,
       }}>
-        <Label>What I Bring</Label>
+        <Label>{t('capabilities.label')}</Label>
         <p style={{ fontSize: '0.9rem', color: 'var(--muted)', fontWeight: 300, maxWidth: '55ch', marginBottom: '1.25rem' }}>
-          Not five separate services. One connected skill set, applied to whichever situation above fits you.
+          {t('capabilities.intro')}
         </p>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem' }}>
-          {CAPABILITIES.map((c) => (
+          {capabilityList.map((c) => (
             <span key={c} style={{
               fontFamily: 'var(--mono)',
               fontSize: '0.7rem',
@@ -1089,8 +1098,8 @@ export default function WorkWithMePage() {
         position: 'relative',
         zIndex: 1,
       }}>
-        <Label>Engagement Models</Label>
-        <SectionTitle>Sold as outcomes, not hours.</SectionTitle>
+        <Label>{t('engagement.label')}</Label>
+        <SectionTitle>{t('engagement.title')}</SectionTitle>
         <p style={{
           fontFamily: 'var(--sans)',
           fontSize: '0.85rem',
@@ -1099,7 +1108,7 @@ export default function WorkWithMePage() {
           marginTop: '1rem',
           maxWidth: '60ch',
         }}>
-          These are typical starting points, not rigid packages — actual scope depends on the initiative. Each level is a different depth of commitment, not a separate, unrelated service.
+          {t('engagement.body')}
         </p>
 
         <div style={{
@@ -1109,7 +1118,7 @@ export default function WorkWithMePage() {
           gap: '0.6rem',
           marginTop: '2rem',
         }}>
-          {COMMITMENT_LADDER.map((step, i) => (
+          {commitmentSteps.map((step, i) => (
             <div key={step.label} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
               <div style={{
                 display: 'flex',
@@ -1139,56 +1148,61 @@ export default function WorkWithMePage() {
           gap: '2rem',
           marginTop: '3rem',
         }}>
-          {PRICING.map((m) => (
-            <div key={m.title} style={offerCardStyle}>
-              <p style={{ fontFamily: 'var(--mono)', fontSize: '0.6rem', color: 'var(--accent)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.6rem' }}>
-                {m.eyebrow}
-              </p>
+          {pricingList.map((m) => {
+            const ctaLabel = typeof m.cta === 'string' ? m.cta : m.cta.label
+            const ctaHref = typeof m.cta === 'string' ? '#discovery' : m.cta.href
 
-              <h3 style={{ fontFamily: 'var(--serif)', fontSize: '1.35rem', fontWeight: 400, margin: '0 0 0.85rem', color: 'var(--text)' }}>
-                {m.title}
-              </h3>
-
-              <p style={{ fontSize: '0.85rem', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.55, marginBottom: '1.25rem', minHeight: '3.3rem' }}>
-                {m.description}
-              </p>
-
-              <p style={{ fontSize: '1.05rem', color: 'var(--text)', fontWeight: 300, marginBottom: '1.5rem' }}>
-                {m.price}
-              </p>
-
-              <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1.1rem', marginBottom: '1.1rem' }}>
-                <p style={{ fontFamily: 'var(--mono)', fontSize: '0.6rem', color: 'var(--muted)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.6rem' }}>
-                  Ideal for
+            return (
+              <div key={m.title} style={offerCardStyle}>
+                <p style={{ fontFamily: 'var(--mono)', fontSize: '0.6rem', color: 'var(--accent)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.6rem' }}>
+                  {m.eyebrow}
                 </p>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                  {m.idealFor.map((item) => (
-                    <li key={item} style={{ fontSize: '0.8rem', color: 'var(--text)', fontWeight: 300, lineHeight: 1.6 }}>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+
+                <h3 style={{ fontFamily: 'var(--serif)', fontSize: '1.35rem', fontWeight: 400, margin: '0 0 0.85rem', color: 'var(--text)' }}>
+                  {m.title}
+                </h3>
+
+                <p style={{ fontSize: '0.85rem', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.55, marginBottom: '1.25rem', minHeight: '3.3rem' }}>
+                  {m.description}
+                </p>
+
+                <p style={{ fontSize: '1.05rem', color: 'var(--text)', fontWeight: 300, marginBottom: '1.5rem' }}>
+                  {m.price}
+                </p>
+
+                <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1.1rem', marginBottom: '1.1rem' }}>
+                  <p style={{ fontFamily: 'var(--mono)', fontSize: '0.6rem', color: 'var(--muted)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.6rem' }}>
+                    Ideal for
+                  </p>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                    {m.idealFor.map((item) => (
+                      <li key={item} style={{ fontSize: '0.8rem', color: 'var(--text)', fontWeight: 300, lineHeight: 1.6 }}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1.1rem', marginBottom: '1.5rem' }}>
+                  <p style={{ fontFamily: 'var(--mono)', fontSize: '0.6rem', color: 'var(--muted)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>
+                    Outcome
+                  </p>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text)', fontWeight: 300, lineHeight: 1.5 }}>
+                    {m.outcome}
+                  </p>
+                </div>
+
+                <a
+                  href={ctaHref}
+                  target={ctaHref.startsWith('http') ? '_blank' : undefined}
+                  rel={ctaHref.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  style={{ ...secondaryButtonStyle, marginTop: 'auto', textAlign: 'center' }}
+                >
+                  {ctaLabel}
+                </a>
               </div>
-
-              <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1.1rem', marginBottom: '1.5rem' }}>
-                <p style={{ fontFamily: 'var(--mono)', fontSize: '0.6rem', color: 'var(--muted)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>
-                  Outcome
-                </p>
-                <p style={{ fontSize: '0.85rem', color: 'var(--text)', fontWeight: 300, lineHeight: 1.5 }}>
-                  {m.outcome}
-                </p>
-              </div>
-
-              <a
-                href={m.cta.href}
-                target={m.cta.href.startsWith('http') ? '_blank' : undefined}
-                rel={m.cta.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                style={{ ...secondaryButtonStyle, marginTop: 'auto', textAlign: 'center' }}
-              >
-                {m.cta.label}
-              </a>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </section>
 
@@ -1201,11 +1215,11 @@ export default function WorkWithMePage() {
         position: 'relative',
         zIndex: 1,
       }}>
-        <Label>My Process</Label>
-        <SectionTitle>One continuous cycle, not a handoff chain.</SectionTitle>
+        <Label>{t('process.label')}</Label>
+        <SectionTitle>{t('process.title')}</SectionTitle>
 
         <div style={{ marginTop: '3rem', maxWidth: '640px' }}>
-          {PROCESS.map((p, i) => (
+          {processList.map((p, i) => (
             <div key={p.step} style={{ display: 'flex', gap: '1.75rem' }}>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '2rem' }}>
                 <span style={{
@@ -1241,8 +1255,8 @@ export default function WorkWithMePage() {
         position: 'relative',
         zIndex: 1,
       }}>
-        <Label>Products I'm Building</Label>
-        <SectionTitle>I don't only provide services. I build original software.</SectionTitle>
+        <Label>{t('products.label')}</Label>
+        <SectionTitle>{t('products.title')}</SectionTitle>
 
         <div style={{
           display: 'grid',
@@ -1250,7 +1264,7 @@ export default function WorkWithMePage() {
           gap: '1.5rem',
           marginTop: '3rem',
         }}>
-          {PRODUCTS.map((p) => (
+          {productList.map((p) => (
             <div key={p.name} style={cardStyle}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem' }}>
                 <h3 style={{ fontFamily: 'var(--serif)', fontSize: '1.4rem', fontWeight: 400, margin: 0, color: 'var(--text)' }}>
@@ -1286,8 +1300,8 @@ export default function WorkWithMePage() {
         position: 'relative',
         zIndex: 1,
       }}>
-        <Label>Client Discovery</Label>
-        <SectionTitle>Let's understand what we're building.</SectionTitle>
+        <Label>{t('discovery.label')}</Label>
+        <SectionTitle>{t('discovery.title')}</SectionTitle>
         <p style={{
           fontFamily: 'var(--sans)',
           fontSize: '0.95rem',
@@ -1298,7 +1312,7 @@ export default function WorkWithMePage() {
           marginTop: '1rem',
           marginBottom: '2.5rem',
         }}>
-          This is the first step in understanding your business, your customers, and what you're trying to accomplish. You don't need to know design or technical terminology.
+          {t('discovery.body')}
         </p>
 
         <DiscoveryForm />
@@ -1313,11 +1327,11 @@ export default function WorkWithMePage() {
         position: 'relative',
         zIndex: 1,
       }}>
-        <Label>Frequently Asked Questions</Label>
-        <SectionTitle>Everything you need to know before we talk.</SectionTitle>
+        <Label>{t('faqs.label')}</Label>
+        <SectionTitle>{t('faqs.title')}</SectionTitle>
 
         <div style={{ marginTop: '3rem', maxWidth: '750px' }}>
-          {FAQS.map((faq, idx) => (
+          {faqList.map((faq, idx) => (
             <div key={faq.q} style={{ borderBottom: '1px solid var(--border)', padding: '1.25rem 0' }}>
               <button
                 type="button"

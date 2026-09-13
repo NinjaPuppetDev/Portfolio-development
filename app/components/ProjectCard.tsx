@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 export interface ProjectCardProps {
   index: string
@@ -20,6 +21,7 @@ export interface ProjectCardProps {
 }
 
 export default function ProjectCard(props: ProjectCardProps) {
+  const t = useTranslations('home.selectedWork')
   const {
     index,
     title,
@@ -183,7 +185,7 @@ export default function ProjectCard(props: ProjectCardProps) {
                   opacity: 0.7,
                 }}
               >
-                Interactive Artifact
+                {t('interactiveArtifact')}
               </span>
             </div>
           )}
@@ -226,7 +228,7 @@ export default function ProjectCard(props: ProjectCardProps) {
               opacity: 0.8,
             }}
           >
-            Project Artifact · {index}
+            {t('projectArtifact')} · {index}
           </div>
 
           {/* Main Title */}

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 import GlitchWord from './GlitchWord'
 import { useVeraStore } from '../store/veraStore'
 import { useBodySignals } from '../hooks/useBodySignals'
@@ -9,6 +10,7 @@ import { useVeraAnchor } from '../hooks/useVeraAnchor'
 import ScrollCue from './ScrollCue'
 
 export default function HeroSection() {
+  const t = useTranslations('home')
   useBodySignals()
   const anchorRef = useVeraAnchor('hero', 'dock') as React.RefObject<HTMLDivElement>
   const heroRef = anchorRef
@@ -162,7 +164,7 @@ export default function HeroSection() {
                 opacity: 0.9,
               }}
             >
-              David Raigoza. Product Designer Engineer.
+              {t('eyebrow')}
             </p>
           </button>
 
@@ -178,15 +180,14 @@ export default function HeroSection() {
               marginBottom: '1.75rem',
             }}
           >
-            {mounted ? <GlitchWord word="Idea to Production." /> : 'Idea to Production.'}
+            {mounted ? <GlitchWord word={t('headline.line1')} /> : t('headline.line1')}
             <br />
             <span style={{ fontStyle: 'italic', color: 'var(--text)', opacity: 0.95 }}>
-              {mounted ? <GlitchWord word="One partner, zero handoffs." /> : 'One partner, zero handoffs.'}
+              {mounted ? <GlitchWord word={t('headline.line2')} /> : t('headline.line2')}
             </span>
             <br />
-            {/* Boosted contrast from 0.6 opacity / var(--muted) to 0.85 opacity */}
             <span style={{ color: 'var(--text)', opacity: 0.85 }}>
-              {mounted ? <GlitchWord word="In days. Not months." /> : 'In days. Not months.'}
+              {mounted ? <GlitchWord word={t('headline.line3')} /> : t('headline.line3')}
             </span>
           </h1>
 
@@ -203,7 +204,7 @@ export default function HeroSection() {
               margin: 0,
             }}
           >
-            Every product begins as a conversation. Somewhere between the first sketch and the first customer, that conversation gets translated into specifications, tickets, meetings, revisions, and handoffs. Every translation changes the idea. I built my practice to remove those translations.
+            {t('intro')}
           </p>
         </div>
 
@@ -236,7 +237,7 @@ export default function HeroSection() {
                 transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
               }}
             >
-              <span>Work With Me</span>
+              <span>{t('cta')}</span>
               <span
                 aria-hidden="true"
                 style={{

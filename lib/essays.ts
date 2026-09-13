@@ -8,6 +8,7 @@ export interface Essay {
   // Full essay body in Markdown. Paste your original text here — nothing
   // is pre-filled from Medium to avoid reproducing published text.
   body: string
+  locales?: Partial<Record<'en' | 'es', Partial<Omit<Essay, 'locales'>>>>
 }
 
 export const essays: Essay[] = [
@@ -127,6 +128,10 @@ That question is bigger than interface design though. If the taste itself is lea
   },
 ]
 
-export function getEssay(slug: string) {
-  return essays.find(e => e.slug === slug)
+export function getEssay(slug: string, locale: string = 'en') {
+  const essay = essays.find(e => e.slug === slug)
+  if (!essay) return undefined
+
+  const localizedEssay = essay.locales?.[locale as 'en' | 'es']
+  return localizedEssay ? { ...essay, ...localizedEssay } : essay
 }

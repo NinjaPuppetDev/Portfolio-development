@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import EssayCard from '../components/EssayCard'
-import { essays } from '../../lib/essays'
+import EssayCard from '../../components/EssayCard'
+import { essays } from '../../../lib/essays'
 
 export const metadata: Metadata = {
   title: 'Writing — David Raigoza',

@@ -1,14 +1,20 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
+import { useLocale, useTranslations } from 'next-intl'
+import type { ReactNode } from 'react'
 import { useExperiment } from './ExperimentProvider'
 import DesktopNavigation from './DesktopNavigation'
 import MobileNavigation from './MobileNavigation'
+import LanguageSuggestion from './LanguageSuggestion'
 
 export default function Navigation() {
   const { variant } = useExperiment()
   const pathname = usePathname()
+  const router = useRouter()
+  const locale = useLocale()
+  const t = useTranslations('nav')
   const [mounted, setMounted] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
@@ -45,10 +51,59 @@ export default function Navigation() {
     textMuted: isLightPage ? 'rgba(0, 0, 0, 0.5)' : 'var(--muted)',
   }
 
+  const switchLocale = (nextLocale: 'en' | 'es') => {
+    if (nextLocale === locale) return
+
+    const localizedPath = pathname.replace(/^\/(en|es)(?=\/|$)/, '') || '/'
+    window.localStorage.setItem('portfolio-language-preference', nextLocale)
+    document.cookie = `NEXT_LOCALE=${nextLocale}; Path=/; Max-Age=${60 * 60 * 24 * 365}; SameSite=Lax`
+    router.push(`/${nextLocale}${localizedPath}`)
+  }
+
+  const languageSwitcher: ReactNode = (
+    <div
+      aria-label="Language"
+      role="group"
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '0.1rem',
+        marginLeft: '0.25rem',
+        paddingLeft: '0.35rem',
+        borderLeft: isLightPage ? '1px solid rgba(0, 0, 0, 0.1)' : '1px solid rgba(255, 255, 255, 0.12)',
+      }}
+    >
+      {(['en', 'es'] as const).map((option) => (
+        <button
+          key={option}
+          type="button"
+          aria-pressed={locale === option}
+          onClick={() => switchLocale(option)}
+          style={{
+            border: 'none',
+            background: locale === option
+              ? (isLightPage ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.1)')
+              : 'transparent',
+            color: locale === option ? theme.textPrimary : theme.textMuted,
+            borderRadius: '12px',
+            padding: '0.35rem 0.45rem',
+            fontFamily: 'var(--mono)',
+            fontSize: '0.6rem',
+            letterSpacing: '0.08em',
+            cursor: locale === option ? 'default' : 'pointer',
+            opacity: locale === option ? 1 : 0.7,
+          }}
+        >
+          {option.toUpperCase()}
+        </button>
+      ))}
+    </div>
+  )
+
   const navItems = [
-    { label: 'work', href: '/#work' },
-    { label: 'about', href: '/#about' },
-    { label: 'work with me', href: '/work-with-me' },
+    { label: t('work'), href: '/#work' },
+    { label: t('home'), href: '/#home' },
+    { label: t('workWithMe'), href: '/work-with-me' },
   ]
 
   return (
@@ -72,6 +127,7 @@ export default function Navigation() {
           navItems={navItems}
           pathname={pathname}
           showActiveState={showActiveState}
+          languageSwitcher={languageSwitcher}
         />
       ) : (
         <DesktopNavigation
@@ -79,8 +135,10 @@ export default function Navigation() {
           navItems={navItems}
           pathname={pathname}
           showActiveState={showActiveState}
+          languageSwitcher={languageSwitcher}
         />
       )}
+      <LanguageSuggestion />
     </div>
   )
 }

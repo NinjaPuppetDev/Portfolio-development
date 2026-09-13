@@ -11,6 +11,7 @@ import {
   SiStripe,
   SiVitest,
 } from 'react-icons/si'
+import { useTranslations } from 'next-intl'
 import type { IconType } from 'react-icons'
 
 interface StackItem {
@@ -34,6 +35,8 @@ const stack: StackItem[] = [
 const track = [...stack, ...stack]
 
 export default function TechStackBanner() {
+  const t = useTranslations('home')
+
   return (
     <div
       style={{
@@ -60,7 +63,7 @@ export default function TechStackBanner() {
           whiteSpace: 'nowrap',
         }}
       >
-        The stack I run
+        {t('stackLabel')}
       </span>
 
       <div

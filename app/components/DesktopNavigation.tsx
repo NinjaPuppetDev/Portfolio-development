@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import type { ReactNode } from 'react'
 import VeraButton from './VeraButton'
 
 interface NavItem {
@@ -19,9 +20,10 @@ interface DesktopNavigationProps {
   navItems: NavItem[]
   pathname: string
   showActiveState: boolean
+  languageSwitcher: ReactNode
 }
 
-export default function DesktopNavigation({ theme, navItems, pathname, showActiveState }: DesktopNavigationProps) {
+export default function DesktopNavigation({ theme, navItems, pathname, showActiveState, languageSwitcher }: DesktopNavigationProps) {
   const { isLightPage, textPrimary, textMuted } = theme
 
   return (
@@ -160,6 +162,7 @@ export default function DesktopNavigation({ theme, navItems, pathname, showActiv
             {item.label}
           </Link>
         ))}
+        {languageSwitcher}
       </div>
 
       {/* NEUMORPHIC BUTTON EXTENSION (PRIMARY CTA) */}

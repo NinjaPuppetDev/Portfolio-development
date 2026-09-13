@@ -1,0 +1,344 @@
+{
+  "languageSuggestion": {
+    "eyebrow": "Language detected",
+    "message": "It looks like you prefer Spanish.",
+    "continueSpanish": "Continue in Spanish →",
+    "keepEnglish": "Keep English"
+  },
+  "cookie": {
+    "title": "A little consent",
+    "description": "I use privacy-friendly analytics to understand how this portfolio is used and improve the experience.",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+  "nav": {
+    "home": "Home",
+    "work": "Work",
+    "writing": "Writing",
+    "workWithMe": "Work With Me"
+  },
+  "home": {
+    "eyebrow": "David Raigoza. Product Designer Engineer.",
+    "headline": {
+      "line1": "Idea to Production.",
+      "line2": "One partner, zero handoffs.",
+      "line3": "In days. Not months."
+    },
+    "intro": "Every product begins as a conversation. Somewhere between the first sketch and the first customer, that conversation gets translated into specifications, tickets, meetings, revisions, and handoffs. Every translation changes the idea. I built my practice to remove those translations.",
+    "cta": "Work With Me",
+    "selectedWork": {
+      "title": "Selected Work",
+      "intro1": "Different industries. One continuous design practice.",
+      "intro2": "The projects below explore a common objective: reducing the distance between an idea and the people it hopes to reach.",
+      "track": "Track",
+      "scrollCue": "Scroll down to advance",
+      "continuedToLabs": "Continued vertical scroll exits to Labs",
+      "horizontalSequence": "Horizontal reveal sequence",
+      "projectArtifact": "Project Artifact",
+      "interactiveArtifact": "Interactive Artifact",
+      "tracks": [
+        {
+          "number": "01",
+          "title": "Rapid Validation & AI-Driven Products",
+          "question": "How do we reduce uncertainty before people commit?",
+          "support": "Credentials reveal where someone has been. These projects reveal what can be built today."
+        },
+        {
+          "number": "02",
+          "title": "Friction-Free Financial Systems",
+          "question": "How do strangers learn to trust complex financial systems?",
+          "support": "Translating the strengths of institutions and code into products ordinary people can actually use."
+        },
+        {
+          "number": "03",
+          "title": "Digital Experiences for Physical Products",
+          "question": "How can craftsmanship survive the transition into digital experiences?",
+          "support": "Preserving the character of a physical product instead of reducing it to a transaction."
+        }
+      ],
+      "projects": [
+        { "index": "01", "title": "Virtual Portfolio Hub", "subtitle": "An AI-powered portfolio that turns a static showcase into an interactive conversation.", "description": "An interactive portfolio that turns project work into a searchable professional profile.", "linkLabel": "View case study" },
+        { "index": "02", "title": "Common Ground", "subtitle": "Building a shared operational space for seamless alignment and real-time collaboration.", "description": "A real-time workspace designed to align teams, information, and decisions in one place.", "linkLabel": "View case study" },
+        { "index": "03", "title": "QIE Neobank", "subtitle": "Making decentralized finance feel understandable before it asks for trust.", "description": "A DeFi banking experience that translates protocol complexity into a clearer product layer.", "linkLabel": "View case study" },
+        { "index": "04", "title": "Bruma Protocol", "subtitle": "Making complex on-chain risk states understandable while markets move.", "description": "An interface that translates smart-contract and oracle states into actionable signals.", "linkLabel": "View protocol" },
+        { "index": "05", "title": "Pepe Matilda", "subtitle": "Designing the connection between a physical product and the digital experience around it.", "description": "A jewelry brand connecting custom manufacturing, product design, e-commerce, and brand systems.", "linkLabel": "View project" },
+        { "index": "06", "title": "NextStep", "subtitle": "Exploring what happens when a shoe becomes a digital product.", "description": "A 3D-printed footwear concept exploring customization through digital product design.", "linkLabel": "View case study" },
+        { "index": "07", "title": "Marigold Bloom", "subtitle": "Building a digital ritual around a physical skincare product.", "description": "A cosmetics concept connecting visual identity, product storytelling, and digital interaction.", "linkLabel": "View case study" },
+        { "index": "08", "title": "GitHub Core", "subtitle": "The code behind the systems, not just the screenshots.", "description": "An open repository making the architecture behind selected projects inspectable.", "linkLabel": "View on GitHub" }
+      ]
+    },
+    "contact": {
+      "eyebrow": "Inquiry",
+      "heading1": "Let's continue",
+      "heading2": "the conversation.",
+      "body": "Every product begins as an idea.\n\nThe difficult part isn't building it.\nIt's understanding what it wants to become.\n\nWhether you're exploring a new venture, improving an existing product, or trying to make sense of a complex problem, I'd be happy to think it through with you.\n\nSometimes the outcome is a website.\nSometimes it's a prototype.\n\nSometimes it's realizing you don't need to build what you thought you needed.\n\nEvery conversation starts somewhere."
+    },
+    "stackLabel": "The stack I run",
+    "writing": {
+      "label": "Writing",
+      "allEssays": "All essays"
+    },
+    "labs": {
+      "title": "In the Lab",
+      "eyebrow": "R&D & Active Research",
+      "intro1": "Every client project solves a specific problem.",
+      "intro2": "The work below explores broader questions.",
+      "intro3": "Some experiments become products. Some become research. Some become entirely new ways of thinking about design.",
+      "learnMore": "Learn More",
+      "closing1": "Everything here eventually finds its way back into client work.",
+      "closing2": "Research informs practice.",
+      "closing3": "Practice generates new questions.",
+      "projects": [
+        { "title": "Vera", "description": "The conversational interface for navigating products, portfolios, and ideas.", "status": "Active", "linkLabel": "Launch Vera" },
+        { "title": "Common Ground", "description": "An ontology-driven system for investigating market positioning through layered reasoning.", "status": "Beta" },
+        { "title": "Web3 Builder", "description": "An AI-assisted environment for designing, testing, and deploying smart contract systems.", "status": "In Development" }
+      ]
+    },
+    "contactForm": {
+      "errors": { "required": "All fields are required.", "email": "Please enter a valid email address.", "generic": "Something went wrong.", "connection": "Connection error. Try again." },
+      "success": { "title": "Message sent", "body": "Transmission complete. I'll review the parameters and get back to you shortly.", "again": "Send another" },
+      "fields": {
+        "name": { "label": "Name", "placeholder": "Identity / Entity name" },
+        "email": { "label": "Email", "placeholder": "secure@routing.path" },
+        "message": { "label": "Message", "placeholder": "System requirements or exploration scope..." }
+      },
+      "submitting": "Transmitting...",
+      "submit": "Submit"
+    }
+  },
+  "about": {
+    "eyebrow": "WHY ONE PARTNER?",
+    "heading1": "One conversation.",
+    "heading2": "One continuous system.",
+    "intro1": "I run a lightweight product studio built to move from intention to working product without the overhead of a traditional team.",
+    "intro2": "Strategy, design, engineering, AI, and deployment are usually treated as separate stages. I work across them as one continuous system, so decisions can stay connected from the first idea to the product in people's hands.",
+    "bookCall": "Book a discovery call",
+    "explore": "Explore the portfolio",
+    "principles": [
+      {
+        "index": "01",
+        "title": "Preserve the idea",
+        "description": "Every decision should reinforce the original problem instead of diluting it through disconnected handoffs."
+      },
+      {
+        "index": "02",
+        "title": "Build as one system",
+        "description": "Strategy, design, engineering, AI, and business decisions evolve together instead of being separated into isolated phases."
+      },
+      {
+        "index": "03",
+        "title": "Learn from reality",
+        "description": "Launching is not the end. Every product generates evidence that informs what comes next."
+      }
+    ],
+    "closing": {
+      "line1": "The projects below are connected by more than technology.",
+      "line2": "Whether the outcome becomes an AI platform, a blockchain protocol, or a physical product, the objective remains the same:",
+      "line3": "Reduce the distance between intention and understanding."
+    }
+  },
+  "workWithMe": {
+    "eyebrow": "Work With Me",
+    "heroTitle": "You don't need to assemble a product team for every product problem.",
+    "heroBody": "I help early-stage product teams turn complex ideas into clear, working products — closing the gap between product thinking, system architecture, design and engineering, instead of hiring multiple specialists and hoping the handoffs hold.",
+    "primaryCta": "Start Client Discovery →",
+    "secondaryCta": "Book a Discovery Call",
+    "problem": {
+      "label": "The Problem I Solve",
+      "title": "Most teams have the pieces. They're missing the connective tissue.",
+      "body1": "Strategy gets disconnected from design. Design gets disconnected from engineering. AI capabilities get bolted onto products without a coherent interaction model. Complex technical systems become hard to explain, use and ship. I work across the system, from definition through production, to close that gap.",
+      "body2": "The usual alternative is Founder → PM → designer → developer → QA → revisions. Every handoff adds interpretation, delay and rework. Working with me compresses that into one line: Founder or product team ↔ me."
+    },
+    "problems": [
+      "Product ambiguity — you know something should exist, not what it is yet.",
+      "Slow development caused by too much coordination between specialists.",
+      "Design and engineering handoffs that lose context every time work changes hands.",
+      "Getting stuck between a prototype and something you can actually ship.",
+      "Knowing what to build, but not having the person to carry it across the finish line.",
+      "Having an existing team, but needing extra product/design/engineering capacity for one initiative."
+    ],
+    "ways": {
+      "label": "How We Can Work Together",
+      "title": "Four situations. Pick the one that matches where you are.",
+      "items": [
+        {
+          "tag": "01",
+          "title": "Find the Product",
+          "subtitle": "You have an idea. Let’s figure out what’s actually worth building.",
+          "includes": [
+            "Product strategy & problem framing",
+            "UX research",
+            "Technical direction",
+            "AI opportunity assessment",
+            "Interactive prototype",
+            "Product roadmap"
+          ],
+          "outcome": "A clearer product direction and a concrete plan for what to build next."
+        },
+        {
+          "tag": "02",
+          "title": "Build the Product",
+          "subtitle": "From product direction to a working MVP.",
+          "includes": [
+            "Product strategy & UX/UI",
+            "System architecture",
+            "Full-stack development",
+            "AI integrations",
+            "Database & backend",
+            "Deployment"
+          ],
+          "outcome": "A functional product that can reach real users and generate real learning."
+        },
+        {
+          "tag": "03",
+          "title": "Accelerate the Product",
+          "subtitle": "Your team doesn’t need another pair of hands. It needs momentum.",
+          "includes": [
+            "A new product or feature",
+            "A prototype or redesign",
+            "AI integration",
+            "A complex technical interaction",
+            "An initiative that has stalled",
+            "Bridging product, design & engineering"
+          ],
+          "outcome": "An initiative that moves again, without waiting to hire and onboard."
+        },
+        {
+          "tag": "04",
+          "title": "Keep the Product Moving",
+          "subtitle": "Ongoing product care and iteration without another full-time hire.",
+          "includes": [
+            "Bug fixes & technical maintenance",
+            "Dependency & infrastructure updates",
+            "Performance & UX improvements",
+            "Small feature iterations",
+            "Analytics, SEO/AEO",
+            "AI integrations"
+          ],
+          "outcome": "A product that keeps improving after launch, without staffing up to do it."
+        }
+      ]
+    },
+    "capabilities": {
+      "label": "What I Bring",
+      "intro": "Not five separate services. One connected skill set, applied to whichever situation above fits you.",
+      "items": [
+        "Product Strategy",
+        "System Architecture",
+        "Product Design",
+        "Full-Stack Engineering",
+        "AI-Native Workflows"
+      ]
+    },
+    "engagement": {
+      "label": "Engagement Models",
+      "title": "Sold as outcomes, not hours.",
+      "body": "These are typical starting points, not rigid packages — actual scope depends on the initiative. Each level is a different depth of commitment, not a separate, unrelated service.",
+      "ladder": [
+        { "label": "Product Clarity", "price": "$300–$500" },
+        { "label": "Discovery Sprint", "price": "$2,500+" },
+        { "label": "MVP Partnership", "price": "$10,000+" },
+        { "label": "Fractional Partner", "price": "Custom" }
+      ],
+      "pricing": [
+        {
+          "eyebrow": "Start Here",
+          "title": "Product Clarity",
+          "description": "Not sure what to build, fix, or prioritize? Get a focused assessment before committing to a larger engagement.",
+          "price": "$300–$500",
+          "idealFor": [
+            "Founders with an idea",
+            "Teams unsure what to prioritize",
+            "A second opinion before a bigger commitment"
+          ],
+          "outcome": "A clear view of what deserves attention and what to do next.",
+          "cta": "Start with Product Clarity →"
+        },
+        {
+          "eyebrow": "Define the Product",
+          "title": "Discovery Sprint",
+          "description": "Turn an ambiguous product idea into a defined direction, architecture and prototype.",
+          "price": "Starting at $2,500",
+          "idealFor": [
+            "Founders with an idea",
+            "Product direction & validation",
+            "Technical planning"
+          ],
+          "outcome": "A concrete product definition and roadmap ready for execution.",
+          "cta": "Start Discovery Questionnaire →"
+        },
+        {
+          "eyebrow": "Build the Product",
+          "title": "MVP Partnership",
+          "description": "Take a defined product from strategy and design through engineering and a working MVP.",
+          "price": "Starting at $10,000",
+          "idealFor": [
+            "Startups and small teams",
+            "AI products, SaaS and internal tools",
+            "A scoped product ready to build"
+          ],
+          "outcome": "A working product, built from strategy through deployment.",
+          "cta": "Book a Discovery Call →"
+        },
+        {
+          "eyebrow": "Accelerate the Product",
+          "title": "Fractional Product Partner",
+          "description": "Ongoing product strategy, design and engineering support without adding another full-time team.",
+          "price": "Custom monthly engagement",
+          "idealFor": [
+            "Teams that already have engineers",
+            "A defined product initiative",
+            "Teams that need senior product direction"
+          ],
+          "outcome": "Consistent product momentum without an agency-sized process.",
+          "cta": "Book a Discovery Call →"
+        }
+      ]
+    },
+    "process": {
+      "label": "My Process",
+      "title": "One continuous cycle, not a handoff chain.",
+      "steps": [
+        { "step": "Understand", "description": "Clarify the problem, the user, and the constraints before any solution takes shape." },
+        { "step": "Model", "description": "Map the system — data, logic, and technical architecture — so complexity is visible early." },
+        { "step": "Design", "description": "Shape the interface and experience around real usage, not assumptions." },
+        { "step": "Build", "description": "Ship production-grade code, iterating in the open as the product takes form." },
+        { "step": "Deploy", "description": "Release to real users with monitoring, security, and stability in place." },
+        { "step": "Learn", "description": "Study what the data and users reveal, then feed it back into the next cycle." }
+      ]
+    },
+    "products": {
+      "label": "Products I'm Building",
+      "title": "I don't only provide services. I build original software.",
+      "items": [
+        { "name": "Vera", "description": "AI interface for navigating products and portfolios.", "status": "In Development" },
+        { "name": "Common Ground", "description": "Ontology-based market positioning analysis.", "status": "In Development" },
+        { "name": "Web3 Builder", "description": "AI-assisted Web3 application builder with automated deployment and testing.", "status": "In Development" }
+      ]
+    },
+    "discovery": {
+      "label": "Client Discovery",
+      "title": "Let's understand what we're building.",
+      "body": "This is the first step in understanding your business, your customers, and what you're trying to accomplish. You don't need to know design or technical terminology."
+    },
+    "faqs": {
+      "label": "Frequently Asked Questions",
+      "title": "Everything you need to know before we talk.",
+      "items": [
+        { "q": "Do you work internationally?", "a": "Yes. I'm based in Medellín and work remotely with clients internationally." },
+        { "q": "Do you work with startups?", "a": "Yes — particularly founders and small product teams where product thinking and execution need to stay closely connected." },
+        { "q": "Can you join an existing team?", "a": "Yes. The role can be project-based or ongoing, depending on the product initiative." },
+        { "q": "Do you build the software yourself?", "a": "Yes. I handle product, design and engineering work directly rather than handing the project across a large production team." },
+        { "q": "Do you use AI?", "a": "Yes. AI-native tools and workflows are part of the studio's process, but AI doesn't replace product judgment, engineering decisions or human validation." },
+        { "q": "What if I only have an idea?", "a": "That’s a strong fit for the Discovery Sprint — figuring out what’s actually worth building comes first." },
+        { "q": "What if I already have a team?", "a": "I can join for a specific initiative where product, design and engineering need to move together." },
+        { "q": "Do you build Web3 products?", "a": "Yes, but complex Web3 and protocol work is treated as a specialized engagement. For smart contracts, formal verification and security-sensitive systems, reach out directly." },
+        { "q": "What is Product Clarity, exactly?", "a": "A paid diagnostic, not a discounted Discovery Sprint. It answers what’s actually going on and what to prioritize next — useful on its own, and it can lead into a Discovery Sprint if a deeper product definition turns out to be needed." }
+      ]
+    }
+  },
+  "common": {
+    "viewProject": "View project",
+    "readMore": "Read more"
+  }
+}
